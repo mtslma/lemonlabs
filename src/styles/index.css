@@ -1,1 +1,123 @@
 @import "tailwindcss";
+
+/* ================================
+   LemonLabs Theme
+================================ */
+
+:root {
+    --lemon-yellow: #facc15;
+    --lemon-yellow-soft: #fde047;
+    --lemon-green: #a3e635;
+
+    --shape-yellow-soft: rgba(250, 204, 21, 0.22);
+    --shape-yellow-light: rgba(253, 224, 71, 0.28);
+    --shape-green-soft: rgba(163, 230, 53, 0.26);
+
+    --shape-zinc: rgba(212, 212, 216, 0.72);
+}
+
+/* ================================
+   Background
+================================ */
+
+.home-dot-grid {
+    background-image: radial-gradient(#d4d4d8 1px, transparent 1px);
+    background-size: 24px 24px;
+    opacity: 0.38;
+}
+
+/* ================================
+   Blurs / Bolhas grandes
+================================ */
+
+.lemon-blur-yellow {
+    background: var(--shape-yellow-soft);
+}
+
+.lemon-blur-yellow-light {
+    background: rgba(253, 224, 71, 0.18);
+}
+
+.lemon-blur-green {
+    background: rgba(163, 230, 53, 0.18);
+}
+
+/* ================================
+   Formas sólidas
+================================ */
+
+.lemon-dot-yellow {
+    background: rgba(250, 204, 21, 0.42);
+}
+
+.lemon-dot-yellow-light {
+    background: rgba(253, 224, 71, 0.5);
+}
+
+.lemon-dot-green {
+    background: rgba(163, 230, 53, 0.45);
+}
+
+/* ================================
+   Bordas
+================================ */
+
+.lemon-border-yellow {
+    border-color: rgba(250, 204, 21, 0.32);
+}
+
+.lemon-border-yellow-light {
+    border-color: rgba(253, 224, 71, 0.38);
+}
+
+.lemon-border-green {
+    border-color: rgba(163, 230, 53, 0.34);
+}
+
+.lemon-border-zinc {
+    border-color: var(--shape-zinc);
+}
+
+/* ================================
+   Linhas
+================================ */
+
+.lemon-line-yellow {
+    background: rgba(250, 204, 21, 0.24);
+}
+
+.lemon-line-green {
+    background: rgba(163, 230, 53, 0.28);
+}
+
+.lemon-line-zinc {
+    background: rgba(212, 212, 216, 0.72);
+}
+
+/* ================================
+   Texto / Ícones SVG
+================================ */
+
+.lemon-text-yellow {
+    color: rgba(250, 204, 21, 0.48);
+}
+
+.lemon-text-yellow-light {
+    color: rgba(253, 224, 71, 0.55);
+}
+
+.lemon-text-green {
+    color: rgba(163, 230, 53, 0.48);
+}
+
+.lemon-text-zinc {
+    color: rgba(161, 161, 170, 0.65);
+}
+
+/* ================================
+   Highlight principal
+================================ */
+
+.lemon-highlight {
+    background: var(--lemon-yellow);
+}
