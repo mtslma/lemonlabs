@@ -140,7 +140,7 @@ export default function About() {
                 <div className="theme-surface theme-border mx-auto flex max-w-3xl flex-col items-center rounded-3xl border bg-white/80 p-5 text-center shadow-xs backdrop-blur-sm sm:p-7 lg:p-8">
                     <h2 className="theme-text-primary text-2xl font-black tracking-tight sm:text-3xl">Tem uma ideia para tirar do papel?</h2>
 
-                    <p className="theme-text-secondary mt-3 max-w-xl text-sm leading-relaxed sm:text-base">Me conta o que você quer construir e a gente encontra o caminho mais simples, direto e bem feito para começar.</p>
+                    <p className="theme-text-secondary mt-3 max-w-xl text-sm leading-relaxed sm:text-base">Nos conte o que você quer construir.</p>
 
                     <Link to="/contato" className="cursor-pointer theme-cta-primary mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full px-8 py-4 text-sm font-bold tracking-wide transition-all duration-500 ease-in-out hover:scale-[1.02] hover:shadow-lg sm:w-auto sm:px-10">
                         Começar conversa
