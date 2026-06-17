@@ -3,7 +3,7 @@ import Navbar from "./Navbar";
 
 export default function RootLayout() {
     return (
-        <div className="min-h-screen bg-zinc-50 font-sans text-zinc-900">
+        <div className="theme-page min-h-screen font-sans">
             <Navbar />
             <main>
                 <Outlet />

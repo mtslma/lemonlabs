@@ -4,7 +4,7 @@ import HeroVisual from "../components/home/HeroVisual";
 
 export default function Home() {
     return (
-        <main className="relative min-h-[calc(100vh-72px)] bg-zinc-50 overflow-hidden selection:bg-yellow-400 selection:text-black">
+        <main className="theme-page relative min-h-[calc(100vh-72px)] overflow-hidden">
             <HeroBackground />
 
             <section className="relative z-10 w-full">

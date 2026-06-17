@@ -7,6 +7,8 @@ import NotFound from "./pages/NotFound";
 import Projects from "./pages/Projects";
 import Services from "./pages/Services";
 
+const routerBasename = import.meta.env.BASE_URL.replace(/\/$/, "");
+
 const router = createBrowserRouter(
     [
         {
@@ -41,7 +43,7 @@ const router = createBrowserRouter(
         },
     ],
     {
-        basename: "/lemonlabs",
+        basename: routerBasename,
     },
 );
 

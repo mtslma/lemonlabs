@@ -3,7 +3,6 @@ import "../../styles/Logo.css";
 export default function Logo() {
     return (
         <div className="logo-wrapper group relative flex items-center cursor-pointer select-none py-2">
-            {/* --- BOLHAS --- */}
             <div className="absolute inset-0 z-0 pointer-events-none">
                 <div className="bubble b1" />
                 <div className="bubble b2" />
@@ -17,8 +16,7 @@ export default function Logo() {
                 <div className="bubble b10" />
             </div>
 
-            {/* --- TEXTO DA LOGO --- */}
-            <h1 className="relative z-10 flex items-center text-4xl font-black tracking-[-0.04em] text-zinc-900 drop-shadow-sm">
+            <h1 className="theme-text-primary relative z-10 flex items-center text-4xl font-black tracking-[-0.04em] drop-shadow-sm">
                 <span className="text-lem relative z-10">Lem</span>
 
                 <span className="lemon-o mx-0.75 flex h-[0.82em] w-[0.82em] items-center justify-center relative z-10 top-[0.08em]">

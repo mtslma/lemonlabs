@@ -1,11 +1,21 @@
-export const entryEase = [0.22, 1, 0.36, 1] as const;
+export const motionTokens = {
+    durationMicro: 0.15,
+    durationBase: 0.3,
+    durationEnter: 0.3,
+    staggerChildren: 0.08,
+    delayChildren: 0.08,
+    delayMedium: 0.15,
+    delayLarge: 0.25,
+    easeStandard: [0.4, 0, 0.2, 1] as const,
+    easeEmphasized: [0.22, 1, 0.36, 1] as const,
+} as const;
 
 export const staggerContainer = {
     hidden: {},
     visible: {
         transition: {
-            staggerChildren: 0.08,
-            delayChildren: 0.08,
+            staggerChildren: motionTokens.staggerChildren,
+            delayChildren: motionTokens.delayChildren,
         },
     },
 };
@@ -19,8 +29,8 @@ export const fadeUp = {
         opacity: 1,
         y: 0,
         transition: {
-            duration: 0.55,
-            ease: entryEase,
+            duration: motionTokens.durationEnter,
+            ease: motionTokens.easeEmphasized,
         },
     },
 };
@@ -36,8 +46,8 @@ export const softScale = {
         y: 0,
         scale: 1,
         transition: {
-            duration: 0.65,
-            ease: entryEase,
+            duration: motionTokens.durationBase,
+            ease: motionTokens.easeEmphasized,
         },
     },
 };
@@ -48,7 +58,7 @@ export const slowFloat = {
         transition: {
             duration: 9,
             repeat: Infinity,
-            ease: "easeInOut" as const,
+            ease: motionTokens.easeStandard,
         },
     },
 };
