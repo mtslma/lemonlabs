@@ -18,7 +18,7 @@ export default function AdminShell() {
 
             <section className="relative mx-auto flex min-h-[calc(100vh-72px)] max-w-7xl flex-col gap-6 px-5 py-12 sm:px-8 sm:py-16 lg:px-12 lg:py-0">
                 <div className="grid gap-6 pt-20 sm:pt-24 lg:grid-cols-[280px_1fr] lg:pt-28">
-                    <aside className="theme-surface theme-border h-fit rounded-[2rem] border p-5 shadow-[0_20px_44px_rgba(24,24,27,0.08)]">
+                    <aside className="theme-surface theme-border h-fit rounded-4xl border p-5 shadow-[0_20px_44px_rgba(24,24,27,0.08)]">
                         <div className="rounded-[1.6rem] bg-neutral-950 px-4 py-5 text-white">
                             <div className="flex items-center gap-3">
                                 <div className="rounded-2xl bg-yellow-400/12 p-2.5 text-yellow-300">
@@ -26,7 +26,7 @@ export default function AdminShell() {
                                 </div>
                                 <div>
                                     <p className="text-[0.68rem] font-bold uppercase tracking-[0.18em] text-yellow-200/70">Admin</p>
-                                    <h1 className="text-lg font-black tracking-tight">LemonLabs Panel</h1>
+                                    <h1 className="text-lg font-black tracking-tight">Limosin Panel</h1>
                                 </div>
                             </div>
                             <div className="mt-5 rounded-2xl border border-white/10 bg-white/5 p-4">

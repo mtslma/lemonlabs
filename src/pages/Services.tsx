@@ -146,15 +146,11 @@ function planHref(slug: string) {
     return `/contato?solucao=${slug}`;
 }
 
-/* ────────────────────────────────────────────────────────────────────────── */
-/* SUB-COMPONENTS                                                             */
-/* ────────────────────────────────────────────────────────────────────────── */
-
 function PlanCard({ plan }: { plan: Plan }) {
     const Icon = plan.icon;
 
     return (
-        <article className={`group relative flex h-full flex-col overflow-hidden rounded-3xl border p-6 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:shadow-md sm:p-7 ${plan.featured ? "border-yellow-400 bg-neutral-900" : "theme-surface theme-border bg-white"}`}>
+        <article className={`group relative flex h-full w-full flex-col overflow-hidden rounded-3xl border p-6 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:shadow-md sm:p-7 ${plan.featured ? "border-yellow-400 bg-neutral-900" : "theme-surface theme-border bg-white"}`}>
             <div className={`pointer-events-none absolute inset-x-0 top-0 h-32 bg-linear-to-br via-transparent to-transparent opacity-10 transition-opacity duration-300 group-hover:opacity-15 ${plan.featured ? "from-yellow-400" : "from-yellow-500"}`} />
 
             <div className="relative z-10 flex h-full flex-col">
@@ -178,6 +174,7 @@ function PlanCard({ plan }: { plan: Plan }) {
                     {plan.includes.map((item) => (
                         <li key={item} className="flex items-start gap-3">
                             <CircleCheckBig className={`mt-0.5 h-4 w-4 shrink-0 ${plan.featured ? "text-yellow-400" : "text-yellow-500"}`} strokeWidth={2.2} />
+
                             <span className={`text-sm leading-relaxed ${plan.featured ? "text-white/80" : "theme-text-secondary"}`}>{item}</span>
                         </li>
                     ))}
@@ -196,7 +193,7 @@ function IntegrationCard({ group }: { group: IntegrationGroup }) {
     const Icon = group.icon;
 
     return (
-        <article className="theme-surface theme-border flex h-full flex-col rounded-3xl border p-6 shadow-xs transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md">
+        <article className="theme-surface theme-border flex h-full min-h-43 flex-col rounded-3xl border p-6 shadow-xs transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md">
             <div className="flex items-center gap-3">
                 <div className="rounded-xl bg-yellow-400/10 p-2 text-yellow-600">
                     <Icon className="h-5 w-5" strokeWidth={2.2} />
@@ -222,7 +219,7 @@ function InfoSection({ title, items, icon: Icon, iconColorClass }: InfoSectionPr
         <article className="theme-surface theme-border flex h-full flex-col rounded-3xl border p-6 shadow-xs transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md sm:p-7">
             <h3 className="theme-text-primary theme-border border-b pb-4 text-base font-black tracking-tight">{title}</h3>
 
-            <ul className="mt-5 space-y-3.5">
+            <ul className="mt-5 grid gap-3.5">
                 {items.map((item, index) => (
                     <li key={index} className="theme-text-secondary flex items-start gap-3 text-sm leading-relaxed">
                         <Icon className={`mt-0.5 h-4 w-4 shrink-0 ${iconColorClass}`} strokeWidth={2.2} />
@@ -234,16 +231,9 @@ function InfoSection({ title, items, icon: Icon, iconColorClass }: InfoSectionPr
     );
 }
 
-/* ────────────────────────────────────────────────────────────────────────── */
-/* MAIN COMPONENT                                                             */
-/* ────────────────────────────────────────────────────────────────────────── */
-
 export default function Services() {
     return (
         <main className="theme-page relative flex min-h-[calc(100vh-72px)] w-full flex-col justify-start overflow-hidden bg-white">
-            {/* ────────────────────────────────────────────────────────────────────────── */}
-            {/* BACKGROUND                                                                 */}
-            {/* ────────────────────────────────────────────────────────────────────────── */}
             <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
                 <div className="absolute inset-0 home-dot-grid opacity-70" />
 
@@ -251,9 +241,6 @@ export default function Services() {
                 <div className="theme-accent-soft absolute -bottom-36 left-12 h-80 w-80 rounded-full blur-[120px] opacity-30" />
             </div>
 
-            {/* ────────────────────────────────────────────────────────────────────────── */}
-            {/* HERO                                                                       */}
-            {/* ────────────────────────────────────────────────────────────────────────── */}
             <section className="relative z-10 w-full max-w-7xl mx-auto px-5 pt-12 sm:px-8 sm:pt-16 lg:px-12 lg:pt-16">
                 <div className="flex w-full flex-col justify-start">
                     <h1 className="theme-text-primary max-w-5xl text-[clamp(3.05rem,13vw,5rem)] font-black leading-[1.03] tracking-tight sm:text-[clamp(4rem,9vw,5.6rem)] lg:text-[clamp(4.6rem,5.6vw,5rem)]">
@@ -274,22 +261,16 @@ export default function Services() {
                 </div>
             </section>
 
-            {/* ────────────────────────────────────────────────────────────────────────── */}
-            {/* PLANOS                                                                     */}
-            {/* ────────────────────────────────────────────────────────────────────────── */}
             <section className="relative z-10 w-full max-w-7xl mx-auto px-5 py-8 sm:px-8 sm:py-10 lg:px-12 lg:py-12">
-                <div className="-mx-5 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-4 sm:-mx-8 sm:px-8 lg:mx-0 lg:grid lg:grid-cols-3 lg:gap-6 lg:overflow-visible lg:px-0 lg:pb-0">
+                <div className="-mx-5 flex snap-x snap-mandatory scroll-px-[7vw] gap-5 overflow-x-auto overscroll-x-contain px-[7vw] pb-5 scroll-smooth scrollbar-none sm:-mx-8 sm:scroll-px-8 sm:px-8 lg:mx-0 lg:grid lg:grid-cols-3 lg:gap-6 lg:overflow-visible lg:px-0 lg:pb-0">
                     {plans.map((plan) => (
-                        <div key={plan.slug} className="w-[82vw] max-w-90 shrink-0 snap-start sm:w-[44vw] sm:max-w-none lg:w-auto lg:max-w-none lg:shrink lg:snap-none">
+                        <div key={plan.slug} className="flex w-[86vw] max-w-97.5 shrink-0 snap-center justify-center sm:w-[46vw] sm:max-w-105 lg:w-auto lg:max-w-none lg:shrink lg:snap-none">
                             <PlanCard plan={plan} />
                         </div>
                     ))}
                 </div>
             </section>
 
-            {/* ────────────────────────────────────────────────────────────────────────── */}
-            {/* INTEGRAÇÕES                                                                */}
-            {/* ────────────────────────────────────────────────────────────────────────── */}
             <section id="integracoes" className="relative z-10 w-full max-w-7xl mx-auto px-5 py-6 sm:px-8 lg:px-12">
                 <div className="theme-surface theme-border rounded-3xl border p-6 shadow-xs sm:p-8">
                     <div className="mb-7 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -300,14 +281,15 @@ export default function Services() {
 
                             <div>
                                 <h2 className="theme-text-primary text-base font-black tracking-tight sm:text-lg">Módulos e integrações</h2>
+
                                 <p className="theme-text-muted mt-1 max-w-2xl text-sm leading-relaxed">Recursos adicionais que podem entrar em qualquer solução base, dependendo do seu fluxo comercial, operacional ou administrativo.</p>
                             </div>
                         </div>
                     </div>
 
-                    <div className="-mx-6 flex snap-x snap-mandatory gap-5 overflow-x-auto px-6 pb-4 sm:-mx-8 sm:px-8 lg:mx-0 lg:grid lg:grid-cols-3 lg:overflow-visible lg:px-0 lg:pb-0">
+                    <div className="grid gap-5 sm:grid-cols-2 lg:flex lg:flex-wrap lg:justify-center lg:gap-6">
                         {integrationGroups.map((group) => (
-                            <div key={group.title} className="w-[76vw] max-w-[320px] shrink-0 snap-start sm:w-[42vw] sm:max-w-none lg:w-auto lg:max-w-none lg:shrink lg:snap-none">
+                            <div key={group.title} className="w-full lg:w-[calc((100%-3rem)/3)] lg:min-w-0">
                                 <IntegrationCard group={group} />
                             </div>
                         ))}
@@ -316,21 +298,15 @@ export default function Services() {
             </section>
 
             {/* ────────────────────────────────────────────────────────────────────────── */}
-            {/* MANUTENÇÃO E SUPORTE                                                       */}
+            {/* MANUTENÇÃO E SUPORTE - SEM SNAP                                           */}
             {/* ────────────────────────────────────────────────────────────────────────── */}
-            <section className="relative z-10 w-full max-w-7xl mx-auto px-5 py-12 pb-20 sm:px-8 lg:px-12 lg:py-16 lg:pb-24">
-                <div className="-mx-5 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-4 sm:-mx-8 sm:px-8 lg:mx-0 lg:grid lg:grid-cols-3 lg:gap-6 lg:overflow-visible lg:px-0 lg:pb-0">
-                    <div className="w-[82vw] max-w-90 shrink-0 snap-start sm:w-[44vw] sm:max-w-none lg:w-auto lg:max-w-none lg:shrink lg:snap-none">
-                        <InfoSection title="Manutenção inclusa" items={maintenanceIncludes} icon={CheckCircle2} iconColorClass="text-emerald-500" />
-                    </div>
+            <section className="relative z-10 w-full max-w-7xl mx-auto px-5 py-10 pb-20 sm:px-8 sm:py-12 lg:px-12 lg:py-16 lg:pb-24">
+                <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+                    <InfoSection title="Manutenção inclusa" items={maintenanceIncludes} icon={CheckCircle2} iconColorClass="text-emerald-500" />
 
-                    <div className="w-[82vw] max-w-90 shrink-0 snap-start sm:w-[44vw] sm:max-w-none lg:w-auto lg:max-w-none lg:shrink lg:snap-none">
-                        <InfoSection title="Fora da manutenção" items={maintenanceExcludes} icon={XCircle} iconColorClass="text-red-500" />
-                    </div>
+                    <InfoSection title="Fora da manutenção" items={maintenanceExcludes} icon={XCircle} iconColorClass="text-red-500" />
 
-                    <div className="w-[82vw] max-w-90 shrink-0 snap-start sm:w-[44vw] sm:max-w-none lg:w-auto lg:max-w-none lg:shrink lg:snap-none">
-                        <InfoSection title="Suporte e SLA" items={supportItems} icon={Clock} iconColorClass="text-yellow-500" />
-                    </div>
+                    <InfoSection title="Suporte e SLA" items={supportItems} icon={Clock} iconColorClass="text-yellow-500" />
                 </div>
             </section>
         </main>

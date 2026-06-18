@@ -1,19 +1,17 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { useAuth } from "../../features/auth/useAuth";
 import Logo from "./Logo";
 
 const navigationLinks = [
     { to: "/", label: "Início" },
     { to: "/servicos", label: "Serviços" },
-    { to: "/projetos", label: "Projetos" },
-    { to: "/sobre", label: "Sobre" },
+    { to: "/portfolio", label: "Portfolio" },
     { to: "/contato", label: "Contato" },
+    { to: "/sobre", label: "Sobre" },
 ];
 
 export default function Navbar() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const { isAuthenticated } = useAuth();
 
     const closeMenu = () => setIsMobileMenuOpen(false);
 
@@ -38,10 +36,6 @@ export default function Navbar() {
                                 {link.label}
                             </NavLink>
                         ))}
-
-                        <Link to={isAuthenticated ? "/painel" : "/entrar"} className="theme-cta-primary inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-black tracking-wide transition-all duration-300 hover:scale-[1.02]">
-                            {isAuthenticated ? "Painel admin" : "Área interna"}
-                        </Link>
                     </nav>
 
                     <div className="flex items-center md:hidden">
@@ -75,10 +69,6 @@ export default function Navbar() {
                             {link.label}
                         </NavLink>
                     ))}
-
-                    <Link to={isAuthenticated ? "/painel" : "/entrar"} onClick={closeMenu} className="mt-6 inline-flex items-center justify-center rounded-full bg-yellow-400 px-5 py-4 text-sm font-black tracking-wide text-neutral-950 shadow-sm transition-all duration-300 hover:bg-yellow-500">
-                        {isAuthenticated ? "Painel admin" : "Área interna"}
-                    </Link>
                 </nav>
             </aside>
         </>

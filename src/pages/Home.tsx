@@ -84,7 +84,7 @@ export default function Home() {
 
                         <div className="mt-7 max-w-xl space-y-4 sm:mt-8">
                             <motion.p className="text-justify theme-text-secondary text-base font-medium leading-relaxed sm:text-lg" variants={fadeUp}>
-                                A LemonLabs ajuda a transformar ideias, necessidades e rascunhos iniciais em soluções digitais reais, com estrutura, personalidade e atenção ao que faz sentido para o seu projeto.
+                                A Limosin ajuda a transformar ideias, necessidades e rascunhos iniciais em soluções digitais reais, com estrutura, personalidade e atenção ao que faz sentido para o seu projeto.
                             </motion.p>
 
                             <motion.p className="text-justify theme-text-muted text-sm leading-relaxed sm:text-base" variants={fadeUp}>
@@ -131,7 +131,7 @@ export default function Home() {
                         <motion.div className="group cursor-pointer theme-surface relative z-30 mx-auto -mt-2 max-w-52 rounded-2xl border px-5 py-5 shadow-xl transition-all duration-500 ease-in-out hover:-translate-y-1 hover:shadow-2xl sm:absolute sm:left-2 sm:top-12 sm:mx-0 sm:mt-0 sm:max-w-44 lg:-left-6 lg:max-w-48" variants={softScale}>
                             <div className="flex items-center gap-2">
                                 <span className="h-1.5 w-1.5 rounded-full bg-(--color-accent,#eab308) transition-transform duration-500 ease-in-out group-hover:scale-110" />
-                                <p className="theme-text-muted text-[10px] font-bold uppercase tracking-[0.14em]">LemonLabs</p>
+                                <p className="theme-text-muted text-[10px] font-bold uppercase tracking-[0.14em]">Limosin</p>
                             </div>
                             <p className="theme-text-primary mt-2.5 text-sm font-bold leading-snug tracking-tight">Ideia, estrutura, desenvolvimento e distribuição.</p>
                         </motion.div>

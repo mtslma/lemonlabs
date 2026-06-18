@@ -26,6 +26,8 @@
     --shadow-surface: 0 20px 40px rgba(24, 24, 27, 0.15);
 }
 
+@import "Scrollbar.css";
+
 :root {
     --selection-bg: color-mix(in srgb, var(--color-accent) 72%, white);
     --selection-text: var(--color-text-primary);
@@ -145,11 +147,7 @@
     }
 
     .hero-title-mark {
-        background-image: linear-gradient(
-            to top,
-            color-mix(in srgb, var(--color-accent) 88%, transparent) 0 24%,
-            transparent 24% 100%
-        );
+        background-image: linear-gradient(to top, color-mix(in srgb, var(--color-accent) 88%, transparent) 0 24%, transparent 24% 100%);
         background-repeat: no-repeat;
         background-size: 100% 100%;
         padding-inline: 0.04em;
@@ -235,4 +233,23 @@
 
 .lemon-highlight {
     background: var(--color-accent);
+}
+
+.scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+    display: none;
+}
+
+@keyframes wiggle {
+    0%,
+    100% {
+        transform: rotate(-2deg);
+    }
+    50% {
+        transform: rotate(2deg);
+    }
 }

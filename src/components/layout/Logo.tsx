@@ -1,9 +1,14 @@
 import "../../styles/Logo.css";
 
-export default function Logo() {
+type LogoProps = {
+    suffix?: string;
+};
+
+export default function Logo({ suffix = "Labs" }: LogoProps) {
     return (
         <div className="logo-wrapper group relative flex items-center cursor-pointer select-none py-2">
-            <div className="absolute inset-0 z-0 pointer-events-none">
+            {/* O ecossistema de bolhas frenéticas voltou */}
+            <div className="logo-bubbles absolute inset-0 z-0 pointer-events-none" aria-hidden="true">
                 <div className="bubble b1" />
                 <div className="bubble b2" />
                 <div className="bubble b3" />
@@ -16,9 +21,11 @@ export default function Logo() {
                 <div className="bubble b10" />
             </div>
 
-            <h1 className="theme-text-primary relative z-10 flex items-center text-4xl font-black tracking-[-0.04em] drop-shadow-sm">
-                <span className="text-lem relative z-10">Lem</span>
+            <h1 className="logo-wordmark theme-text-primary relative z-10 flex items-center text-4xl font-black tracking-[-0.045em] drop-shadow-sm">
+                {/* Começo do nome: Lim */}
+                <span className="text-lem relative z-10">Lim</span>
 
+                {/* Ícone do Limão substituindo o 'o' */}
                 <span className="lemon-o mx-0.75 flex h-[0.82em] w-[0.82em] items-center justify-center relative z-10 top-[0.08em]">
                     <span className="lemon-inner flex items-center justify-center w-full h-full">
                         <svg viewBox="0 0 1024 1024" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -33,7 +40,15 @@ export default function Logo() {
                     </span>
                 </span>
 
-                <span className="text-nlabs relative z-10">nLabs</span>
+                {/* Final do nome principal: sin */}
+                <span className="text-n relative z-10">sin</span>
+
+                {/* Sufixo dinâmico integrado (Padrão: Labs) */}
+                {suffix && (
+                    <span className="brand-suffix relative z-10" aria-label={suffix}>
+                        {suffix}
+                    </span>
+                )}
             </h1>
         </div>
     );
