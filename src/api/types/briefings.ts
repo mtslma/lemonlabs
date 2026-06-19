@@ -4,11 +4,14 @@ export type BriefingStatus = "ARCHIVED" | "CLOSED" | "CONTACTED" | "IN_REVIEW" |
 
 export type Briefing = AuditFields & {
     budget: string | null;
+    clientFeedback: string | null;
     companyName: string | null;
     contactName: string;
     email: string;
     id: string;
     objective: string;
+    projectId: string | null;
+    projectPromotedAt: string | null;
     references: string | null;
     scope: string;
     solutionLabel: string;
@@ -26,12 +29,27 @@ export type CreateBriefingPayload = {
     email: string;
     objective: string;
     references?: string | string[];
-    scope: string;
+    scope?: string;
     solutionLabel: string;
     solutionSlug: string;
     source?: string;
 };
 
-export type UpdateBriefingStatusPayload = {
-    status: BriefingStatus;
+export type UpdateBriefingPayload = {
+    clientFeedback?: string;
+    status?: BriefingStatus;
+};
+
+export type PromoteBriefingPayload = {
+    name?: string;
+    summary?: string;
+};
+
+export type PromoteBriefingResult = {
+    briefing: Briefing;
+    project: {
+        id: string;
+        name: string;
+        status: string;
+    };
 };

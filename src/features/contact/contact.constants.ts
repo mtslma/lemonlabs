@@ -24,5 +24,18 @@ export const initialBriefingForm: ContactBriefingForm = {
     email: "",
     objective: "",
     references: "",
-    scope: "",
+    scope: [],
 };
+
+export const briefingScopeOptions = [
+    "Landing page ou site institucional",
+    "Sistema interno ou painel administrativo",
+    "Automação de WhatsApp",
+    "Integração com pagamento",
+    "Área de cliente com login",
+    "Dashboard e relatórios",
+    "Aplicativo mobile",
+    "Banco de dados e API",
+];
+
+export const CONTACT_BRIEFING_DRAFT_KEY = "lemonlabs.contact.briefing.draft";

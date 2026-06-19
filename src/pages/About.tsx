@@ -89,12 +89,12 @@ export default function About() {
             </div>
 
             {/* HERO */}
-            <section className="relative z-10 w-full max-w-7xl mx-auto px-5 pt-12 sm:px-8 sm:pt-16 lg:px-12 lg:pt-16">
-                <div className="grid items-center gap-8 lg:grid-cols-12 lg:gap-6">
+            <section className="page-shell relative z-10 pt-10 sm:pt-16 lg:pt-16">
+                <div className="grid items-center gap-6 sm:gap-8 lg:grid-cols-12 lg:gap-6">
                     <div className="lg:col-span-7">
-                        <span className="theme-text-muted mb-5 block text-[10px] font-bold uppercase tracking-[0.14em]">Nossa história</span>
+                        <span className="theme-text-muted type-chip mb-5 block">Nossa história</span>
 
-                        <h1 className="theme-text-primary max-w-4xl text-[clamp(3.05rem,13vw,5rem)] font-black leading-[1.03] tracking-tight sm:text-[clamp(4rem,9vw,5.6rem)] lg:text-[clamp(4.2rem,5.2vw,4.8rem)]">
+                        <h1 className="theme-text-primary page-title-display max-w-4xl lg:text-[clamp(4.2rem,5.2vw,4.8rem)]">
                             Construindo o
                             <br />
                             que faz sentido.
@@ -109,18 +109,18 @@ export default function About() {
 
             {/* HISTÓRIA */}
             {/* HISTÓRIA */}
-            <section className="relative z-10 w-full max-w-7xl mx-auto px-5 pt-6 pb-4 sm:px-8 sm:pt-8 sm:pb-5 lg:px-12 lg:pt-8 lg:pb-6">
-                <div className="theme-surface theme-border rounded-3xl border p-5 shadow-xs sm:p-7 lg:p-8">
+            <section className="page-shell relative z-10 pt-5 pb-4 sm:pt-8 sm:pb-5 lg:pt-8 lg:pb-6">
+                <div className="theme-surface theme-border rounded-3xl border p-4 shadow-xs sm:p-7 lg:p-8">
                     <div className="grid gap-6 lg:grid-cols-12 lg:items-start lg:gap-6">
                         <div className="flex flex-col items-center text-center lg:col-span-4">
                             <div className="flex flex-col items-center">
-                                <span className="theme-text-primary text-2xl font-black leading-none tracking-tight sm:text-3xl">Sem excessos,</span>
+                                <span className="theme-text-primary type-section-title leading-none sm:text-3xl">Sem excessos,</span>
 
                                 <div className="-my-1 flex justify-center">
                                     <LemonIllustration />
                                 </div>
 
-                                <span className="theme-text-primary text-2xl font-black leading-none tracking-tight sm:text-3xl">sem complicação.</span>
+                                <span className="theme-text-primary type-section-title leading-none sm:text-3xl">sem complicação.</span>
                             </div>
                         </div>
 
@@ -136,13 +136,13 @@ export default function About() {
             </section>
 
             {/* CTA */}
-            <section className="relative z-10 w-full max-w-7xl mx-auto px-5 pt-3 pb-16 sm:px-8 sm:pt-4 sm:pb-18 lg:px-12 lg:pt-5 lg:pb-20">
+            <section className="page-shell relative z-10 pt-3 pb-16 sm:pt-4 sm:pb-18 lg:pt-5 lg:pb-20">
                 <div className="theme-surface theme-border mx-auto flex max-w-3xl flex-col items-center rounded-3xl border bg-white/80 p-5 text-center shadow-xs backdrop-blur-sm sm:p-7 lg:p-8">
-                    <h2 className="theme-text-primary text-2xl font-black tracking-tight sm:text-3xl">Tem uma ideia para tirar do papel?</h2>
+                    <h2 className="theme-text-primary type-section-title sm:text-3xl">Tem uma ideia para tirar do papel?</h2>
 
                     <p className="theme-text-secondary mt-3 max-w-xl text-sm leading-relaxed sm:text-base">Nos conte o que você quer construir.</p>
 
-                    <Link to="/contato" className="cursor-pointer theme-cta-primary mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full px-8 py-4 text-sm font-bold tracking-wide transition-all duration-500 ease-in-out hover:scale-[1.02] hover:shadow-lg sm:w-auto sm:px-10">
+                    <Link to="/contato" className="cursor-pointer theme-cta-primary type-button mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full px-8 py-4 transition-all duration-500 ease-in-out hover:scale-[1.02] hover:shadow-lg sm:w-auto sm:px-10">
                         Começar conversa
                         <ArrowRight className="h-4 w-4" strokeWidth={2.2} />
                     </Link>

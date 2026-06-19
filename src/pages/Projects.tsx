@@ -62,7 +62,7 @@ function ProjectCard({ project }: { project: Project }) {
     const hasAnyLink = project.liveUrl || project.repoUrl;
 
     return (
-        <article className="group relative flex h-full w-full flex-col overflow-hidden bg-white theme-surface theme-border border border-zinc-200 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-zinc-400 rounded-2xl">
+        <article className="group relative flex h-full w-full flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-zinc-400 hover:shadow-xl theme-surface theme-border">
             {/* TOPO CORTADO EM CLIP-PATH - RECORTE MAIOR (h-36) E SEM HOVER AMARELO */}
             <div className="relative h-36 w-full bg-zinc-950 overflow-hidden" style={{ clipPath: "polygon(0 0, 100% 0, 100% 80%, 0% 100%)" }}>
                 {project.imageUrl && (
@@ -81,13 +81,13 @@ function ProjectCard({ project }: { project: Project }) {
             </div>
 
             {/* CONTEÚDO (TEXTO SELECIONÁVEL) */}
-            <div className="flex flex-1 flex-col p-6 pt-4">
+            <div className="flex flex-1 flex-col p-5 pt-4 sm:p-6">
                 <div>
-                    <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-zinc-500 bg-zinc-100 theme-text-muted px-2.5 py-1 rounded-md">{project.category}</span>
+                    <span className="type-chip bg-zinc-100 theme-text-muted rounded-md px-2.5 py-1 text-zinc-500">{project.category}</span>
                 </div>
 
                 <div className="mt-4 flex-1">
-                    <h2 className="theme-text-primary text-xl font-black leading-tight tracking-tight">{project.name}</h2>
+                    <h2 className="theme-text-primary type-card-title sm:text-xl">{project.name}</h2>
                     <p className="theme-text-secondary mt-2.5 text-sm leading-relaxed text-zinc-600">{project.description}</p>
                 </div>
 
@@ -103,11 +103,11 @@ function ProjectCard({ project }: { project: Project }) {
                 {/* RODAPÉ MULTI-URL COM BOTÕES DE ALTO DESTAQUE */}
                 <div className="mt-6 border-t theme-border border-zinc-100 pt-4 flex items-center">
                     {hasAnyLink ? (
-                        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 w-full text-xs font-bold tracking-wide">
+                        <div className="type-button flex w-full flex-col items-stretch gap-2 sm:flex-row sm:items-center">
                             {/* Link de Produção - Botão Principal Preto */}
                             {project.liveUrl && (
                                 <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="cursor-pointer inline-flex items-center justify-center gap-1.5 bg-zinc-950 text-white px-4 py-2.5 rounded-xl transition-all hover:bg-zinc-800 active:scale-[0.98] group/live shadow-xs">
-                                    <span>Acessar aplicação</span>
+                                    <span className="truncate">Acessar aplicação</span>
                                     <ExternalLink className="h-3.5 w-3.5 transition-transform group-hover/live:translate-x-0.5 group-hover/live:-translate-y-0.5" strokeWidth={2.2} />
                                 </a>
                             )}
@@ -116,7 +116,7 @@ function ProjectCard({ project }: { project: Project }) {
                             {project.repoUrl && (
                                 <a href={project.repoUrl} target="_blank" rel="noopener noreferrer" className="cursor-pointer inline-flex items-center justify-center gap-1.5 bg-zinc-50 border border-zinc-200 text-zinc-700 px-4 py-2.5 rounded-xl transition-all hover:bg-zinc-100 hover:text-zinc-950 active:scale-[0.98] group/repo">
                                     <FolderGit2 className="h-3.5 w-3.5" strokeWidth={2.2} />
-                                    <span>Ver código-fonte</span>
+                                    <span className="truncate">Ver código-fonte</span>
                                 </a>
                             )}
                         </div>
@@ -152,21 +152,21 @@ export default function Projects() {
             </div>
 
             {/* HEADER COM A MESMA ESCALA DA SERVICES, SEM ALTERAR FILTROS */}
-            <section className="relative z-10 w-full max-w-7xl mx-auto px-5 pt-12 sm:px-8 sm:pt-16 lg:px-12 lg:pt-16">
+            <section className="page-shell relative z-10 pt-10 sm:pt-16 lg:pt-16">
                 <div className="flex w-full flex-col justify-start">
-                    <h1 className="theme-text-primary max-w-5xl text-[clamp(3.05rem,13vw,5rem)] font-black leading-[1.03] tracking-tight sm:text-[clamp(4rem,9vw,5.6rem)] lg:text-[clamp(4.6rem,5.6vw,5rem)]">
+                    <h1 className="theme-text-primary page-title-display max-w-5xl lg:text-[clamp(4.6rem,5.6vw,5rem)]">
                         Portfólio de
                         <br />
                         Projetos.
                     </h1>
 
-                    <div className="mt-7 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+                    <div className="mt-5 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between sm:mt-7 sm:gap-6">
                         <p className="theme-text-secondary max-w-2xl text-base text-zinc-500 leading-relaxed sm:text-lg">Confira alguns projetos desenvolvidos pela Limosin. O catálogo engloba ferramentas internas, serviços em nuvem e aplicações criadas sob demanda.</p>
 
                         {/* FILTROS ORIGINAIS MANTIDOS */}
-                        <div className="flex flex-wrap items-center gap-1.5 bg-zinc-100 border border-zinc-200/60 p-1.5 rounded-2xl w-fit shadow-xs">
+                        <div className="mobile-chip-row -mx-1 flex max-w-full items-center gap-1.5 overflow-x-auto rounded-2xl border border-zinc-200/60 bg-zinc-100 p-1.5 shadow-xs">
                             {categories.map((category) => (
-                                <button key={category} onClick={() => setActiveCategory(category)} className="cursor-pointer px-4 py-2 rounded-xl text-xs font-bold tracking-wide transition-all active:scale-95 text-zinc-600 hover:text-zinc-950 data-[active=true]:bg-zinc-950 data-[active=true]:text-white data-[active=true]:shadow-md" data-active={activeCategory === category}>
+                                <button key={category} onClick={() => setActiveCategory(category)} className="type-button cursor-pointer whitespace-nowrap rounded-xl px-4 py-2 transition-all active:scale-95 text-zinc-600 hover:text-zinc-950 data-[active=true]:bg-zinc-950 data-[active=true]:text-white data-[active=true]:shadow-md" data-active={activeCategory === category}>
                                     {category}
                                 </button>
                             ))}
@@ -176,7 +176,7 @@ export default function Projects() {
             </section>
 
             {/* GRID DE PROJETOS COM ESPAÇAMENTO MAIS ALINHADO À SERVICES */}
-            <section className="relative z-10 w-full max-w-7xl mx-auto px-5 py-8 pb-20 sm:px-8 sm:py-10 lg:px-12 lg:py-12 lg:pb-24">
+            <section className="page-shell relative z-10 py-8 pb-20 sm:py-10 lg:py-12 lg:pb-24">
                 {filteredProjects.length > 0 ? (
                     <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
                         {filteredProjects.map((project) => (
@@ -186,7 +186,7 @@ export default function Projects() {
                         ))}
                     </div>
                 ) : (
-                    <div className="theme-surface theme-border flex flex-col items-center justify-center rounded-3xl border border-dashed border-zinc-200 p-12 text-center max-w-xl mx-auto bg-zinc-50/50">
+                    <div className="theme-surface theme-border mx-auto flex max-w-xl flex-col items-center justify-center rounded-3xl border border-dashed border-zinc-200 bg-zinc-50/50 p-8 text-center sm:p-12">
                         <Code2 className="h-9 w-9 text-zinc-400 stroke-[1.5] mb-3" />
                         <h3 className="theme-text-primary text-sm font-bold text-zinc-800">Nenhum repositório nesta área</h3>
                         <p className="theme-text-muted mt-1 text-xs text-zinc-500 leading-relaxed">As aplicações desta categoria estão passando por homologação ou pertencem a escopos privados.</p>

@@ -31,7 +31,7 @@ const socialLinks = [
 export default function Footer() {
     return (
         <footer className="theme-page border-t border-neutral-200 bg-white">
-            <div className="mx-auto flex w-full max-w-7xl flex-col gap-4 px-5 py-5 sm:px-8 lg:px-12">
+            <div className="page-shell flex flex-col gap-4 py-5">
                 <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
                     <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
                         <p className="logo-wordmark theme-text-primary flex items-center text-[1.3rem] font-black tracking-[-0.045em]">

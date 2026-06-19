@@ -36,11 +36,41 @@
 @layer base {
     html {
         background: var(--color-canvas);
+        overflow-x: clip;
+        -webkit-text-size-adjust: 100%;
+    }
+
+    body,
+    #root {
+        background: var(--color-canvas);
+        color: var(--color-text-primary);
+        min-height: 100%;
+        overflow-x: clip;
+        width: 100%;
     }
 
     body {
-        background: var(--color-canvas);
-        color: var(--color-text-primary);
+        text-wrap: pretty;
+    }
+
+    *,
+    *::before,
+    *::after {
+        min-width: 0;
+    }
+
+    img,
+    svg,
+    video,
+    canvas {
+        max-width: 100%;
+    }
+
+    input,
+    textarea,
+    select,
+    button {
+        font: inherit;
     }
 
     ::selection {
@@ -54,6 +84,7 @@
     .theme-page {
         background: var(--color-canvas);
         color: var(--color-text-primary);
+        overflow-x: clip;
     }
 
     .theme-surface {
@@ -154,6 +185,95 @@
         padding-block: 0.02em 0.04em;
         box-decoration-break: clone;
         -webkit-box-decoration-break: clone;
+    }
+
+    .page-shell {
+        margin-inline: auto;
+        width: 100%;
+        max-width: 80rem;
+        padding-inline: 1rem;
+    }
+
+    .page-title-display {
+        font-size: clamp(2.25rem, 10vw, 5rem);
+        font-weight: 700;
+        line-height: 0.98;
+        letter-spacing: -0.045em;
+    }
+
+    .type-eyebrow {
+        font-size: 0.68rem;
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+    }
+
+    .type-section-title {
+        font-size: clamp(1.45rem, 4vw, 2rem);
+        font-weight: 700;
+        line-height: 0.98;
+        letter-spacing: -0.045em;
+    }
+
+    .type-panel-title {
+        font-size: clamp(1.9rem, 5vw, 3rem);
+        font-weight: 700;
+        line-height: 0.98;
+        letter-spacing: -0.045em;
+    }
+
+    .type-card-title {
+        font-size: 1.05rem;
+        font-weight: 700;
+        line-height: 0.98;
+        letter-spacing: -0.04em;
+    }
+
+    .type-metric {
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        font-weight: 700;
+        line-height: 0.95;
+        letter-spacing: -0.03em;
+    }
+
+    .type-chip {
+        font-size: 0.68rem;
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+    }
+
+    .type-button {
+        font-size: 0.92rem;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+    }
+
+    .mobile-chip-row {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .mobile-chip-row::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+@media (min-width: 640px) {
+    @layer components {
+        .page-shell {
+            padding-inline: 2rem;
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    @layer components {
+        .page-shell {
+            padding-inline: 3rem;
+        }
     }
 }
 

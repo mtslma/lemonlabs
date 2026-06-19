@@ -21,7 +21,3 @@ export type CreateQuoteRequestPayload = {
     solutionSlug: string;
     source?: string;
 };
-
-export type UpdateQuoteRequestStatusPayload = {
-    status: QuoteRequestStatus;
-};

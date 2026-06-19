@@ -66,15 +66,15 @@ export default function Home() {
             {/* HERO GRID CONTAINER                                                        */}
             {/* ────────────────────────────────────────────────────────────────────────── */}
             <section className="relative z-10 w-full">
-                <div className="mx-auto grid min-h-[calc(100vh-72px)] w-full max-w-7xl grid-cols-1 items-center gap-14 px-5 py-12 sm:px-8 sm:py-16 lg:grid-cols-12 lg:gap-8 lg:px-12 lg:py-0">
+                <div className="page-shell grid min-h-[calc(100vh-72px)] grid-cols-1 items-center gap-8 py-10 sm:gap-10 sm:py-16 lg:grid-cols-12 lg:gap-8 lg:py-0">
                     {/* HERO CONTENT */}
                     <motion.div className="flex flex-col justify-center lg:col-span-6" variants={staggerContainer} initial={initial} animate={animate}>
                         <motion.div className="mb-5 flex items-center gap-3 sm:mb-7 lg:mb-8" variants={fadeUp}>
                             <div className="theme-accent-fill h-2 w-2 shrink-0 rounded-full" />
-                            <span className="theme-text-muted font-mono text-[0.68rem] font-bold uppercase tracking-[0.22em] sm:text-xs">desenvolvimento sob medida</span>
+                            <span className="theme-text-muted type-eyebrow">desenvolvimento sob medida</span>
                         </motion.div>
 
-                        <motion.h1 className="theme-text-primary max-w-[11ch] text-[clamp(3.05rem,13vw,5rem)] font-black leading-[1.03] tracking-tight sm:max-w-none sm:text-[clamp(4rem,9vw,5.6rem)] lg:text-[clamp(4.6rem,5.6vw,5rem)]" variants={fadeUp}>
+                        <motion.h1 className="theme-text-primary page-title-display max-w-[10.5ch] sm:max-w-none lg:text-[clamp(4.6rem,5.6vw,5rem)]" variants={fadeUp}>
                             Sua ideia
                             <br />
                             transformada
@@ -92,22 +92,22 @@ export default function Home() {
                             </motion.p>
                         </div>
 
-                        <motion.div className="mt-8 flex w-full flex-col gap-4 sm:mt-10 sm:flex-row sm:items-center sm:gap-6" variants={fadeUp}>
-                            <Link to="/contato" className="theme-cta-primary group relative inline-flex w-full items-center justify-center overflow-hidden rounded-full px-8 py-4 text-sm font-bold tracking-wide transition-all duration-500 ease-in-out hover:scale-[1.02] hover:shadow-lg sm:w-auto sm:px-10">
+                        <motion.div className="mt-7 flex w-full flex-col gap-3.5 sm:mt-10 sm:flex-row sm:items-center sm:gap-6" variants={fadeUp}>
+                            <Link to="/contato" className="theme-cta-primary type-button group relative inline-flex w-full items-center justify-center overflow-hidden rounded-full px-8 py-4 transition-all duration-500 ease-in-out hover:scale-[1.02] hover:shadow-lg sm:w-auto sm:px-10">
                                 <span className="relative z-10 flex items-center gap-2">
                                     Montar minha solução
                                     <ArrowRight className="h-4 w-4 transition-transform duration-500 ease-in-out group-hover:translate-x-1.5" strokeWidth={2.25} />
                                 </span>
                             </Link>
 
-                            <Link to="/servicos" className="theme-link-accent inline-flex justify-center text-sm font-bold opacity-80 underline underline-offset-4 transition-opacity duration-500 hover:opacity-100 sm:justify-start">
+                            <Link to="/servicos" className="theme-link-accent type-button inline-flex justify-center opacity-80 underline underline-offset-4 transition-opacity duration-500 hover:opacity-100 sm:justify-start">
                                 Ver planos de serviços
                             </Link>
                         </motion.div>
                     </motion.div>
 
                     {/* HERO VISUAL */}
-                    <motion.div className="relative mx-auto w-full max-w-105 pb-12 sm:max-w-130 lg:col-span-5 lg:col-start-8 lg:mt-0 lg:max-w-none lg:pb-0" variants={staggerContainer} initial={initial} animate={animate}>
+                    <motion.div className="relative mx-auto w-full max-w-105 pb-6 sm:max-w-130 sm:pb-12 lg:col-span-5 lg:col-start-8 lg:mt-0 lg:max-w-none lg:pb-0" variants={staggerContainer} initial={initial} animate={animate}>
                         <div className="theme-accent-soft pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-4xl blur-2xl sm:h-40 sm:w-40" />
                         <div className="theme-support-soft pointer-events-none absolute -left-8 bottom-10 h-28 w-28 rounded-full blur-2xl sm:h-32 sm:w-32" />
 
@@ -115,23 +115,23 @@ export default function Home() {
                         <div className="lemon-border-green pointer-events-none absolute right-0 top-24 z-0 hidden h-8 w-8 rotate-45 border sm:block lg:-right-8" />
 
                         {/* Imagem Principal */}
-                        <motion.div className="cursor-pointer theme-border relative z-10 mx-auto aspect-4/3 w-full overflow-hidden rounded-[1.75rem] border bg-[color-mix(in_srgb,var(--color-canvas-strong)_72%,white)] shadow-2xl sm:aspect-3/4 sm:max-w-85 sm:rounded-4xl lg:ml-auto lg:mr-0" variants={softScale}>
+                        <motion.div className="cursor-pointer theme-border relative z-10 mx-auto aspect-[1.18] w-full overflow-hidden rounded-[1.75rem] border bg-[color-mix(in_srgb,var(--color-canvas-strong)_72%,white)] shadow-2xl sm:aspect-3/4 sm:max-w-85 sm:rounded-4xl lg:ml-auto lg:mr-0" variants={softScale}>
                             <img src="https://images.pexels.com/photos/19354252/pexels-photo-19354252.jpeg" alt="Elemento gráfico abstrato" className="h-full w-full object-cover transition-transform duration-700 ease-in-out hover:scale-105" />
                         </motion.div>
 
                         {/* Imagem Secundária */}
                         <motion.div
-                            className="cursor-pointer theme-border relative z-20 mx-auto -mt-16 aspect-16/10 w-[80%] overflow-hidden rounded-[1.75rem] border bg-[color-mix(in_srgb,var(--color-canvas-strong)_72%,white)] shadow-2xl transition-transform duration-500 ease-in-out hover:scale-[1.02] sm:absolute sm:-bottom-12 sm:-left-8 sm:mt-0 sm:aspect-square sm:w-52 sm:rounded-4xl lg:-left-14 lg:w-56"
+                            className="cursor-pointer theme-border relative z-20 mx-auto -mt-12 aspect-16/10 w-[82%] overflow-hidden rounded-[1.5rem] border bg-[color-mix(in_srgb,var(--color-canvas-strong)_72%,white)] shadow-2xl transition-transform duration-500 ease-in-out hover:scale-[1.02] sm:absolute sm:-bottom-12 sm:-left-8 sm:mt-0 sm:aspect-square sm:w-52 sm:rounded-4xl lg:-left-14 lg:w-56"
                             variants={softScale}
                         >
                             <img src="https://images.pexels.com/photos/11295023/pexels-photo-11295023.jpeg" alt="Textura de hardware tecnológico" className="h-full w-full object-cover" />
                         </motion.div>
 
                         {/* Card flutuante de texto */}
-                        <motion.div className="group cursor-pointer theme-surface relative z-30 mx-auto -mt-2 max-w-52 rounded-2xl border px-5 py-5 shadow-xl transition-all duration-500 ease-in-out hover:-translate-y-1 hover:shadow-2xl sm:absolute sm:left-2 sm:top-12 sm:mx-0 sm:mt-0 sm:max-w-44 lg:-left-6 lg:max-w-48" variants={softScale}>
+                        <motion.div className="group cursor-pointer theme-surface relative z-30 mx-auto -mt-1 max-w-52 rounded-2xl border px-4 py-4 shadow-xl transition-all duration-500 ease-in-out hover:-translate-y-1 hover:shadow-2xl sm:absolute sm:left-2 sm:top-12 sm:mx-0 sm:mt-0 sm:max-w-44 sm:px-5 sm:py-5 lg:-left-6 lg:max-w-48" variants={softScale}>
                             <div className="flex items-center gap-2">
                                 <span className="h-1.5 w-1.5 rounded-full bg-(--color-accent,#eab308) transition-transform duration-500 ease-in-out group-hover:scale-110" />
-                                <p className="theme-text-muted text-[10px] font-bold uppercase tracking-[0.14em]">Limosin</p>
+                                <p className="theme-text-muted type-chip">Limosin</p>
                             </div>
                             <p className="theme-text-primary mt-2.5 text-sm font-bold leading-snug tracking-tight">Ideia, estrutura, desenvolvimento e distribuição.</p>
                         </motion.div>

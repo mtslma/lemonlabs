@@ -150,7 +150,7 @@ function PlanCard({ plan }: { plan: Plan }) {
     const Icon = plan.icon;
 
     return (
-        <article className={`group relative flex h-full w-full flex-col overflow-hidden rounded-3xl border p-6 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:shadow-md sm:p-7 ${plan.featured ? "border-yellow-400 bg-neutral-900" : "theme-surface theme-border bg-white"}`}>
+        <article className={`group relative flex h-full w-full flex-col overflow-hidden rounded-3xl border p-5 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:shadow-md sm:p-7 ${plan.featured ? "border-yellow-400 bg-neutral-900" : "theme-surface theme-border bg-white"}`}>
             <div className={`pointer-events-none absolute inset-x-0 top-0 h-32 bg-linear-to-br via-transparent to-transparent opacity-10 transition-opacity duration-300 group-hover:opacity-15 ${plan.featured ? "from-yellow-400" : "from-yellow-500"}`} />
 
             <div className="relative z-10 flex h-full flex-col">
@@ -159,18 +159,18 @@ function PlanCard({ plan }: { plan: Plan }) {
                         <Icon className="h-5 w-5" strokeWidth={2.2} />
                     </div>
 
-                    <span className={`w-fit rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-[0.14em] ${plan.featured ? "bg-white/10 text-white/70" : "bg-neutral-100 theme-text-muted"}`}>{plan.timeline}</span>
+                    <span className={`type-chip w-fit rounded-full px-3 py-1 ${plan.featured ? "bg-white/10 text-white/70" : "bg-neutral-100 theme-text-muted"}`}>{plan.timeline}</span>
                 </div>
 
-                <div className="mt-6">
-                    <h2 className={`text-xl font-black leading-tight tracking-tight sm:text-2xl ${plan.featured ? "text-white" : "theme-text-primary"}`}>{plan.name}</h2>
+                <div className="mt-5 sm:mt-6">
+                    <h2 className={`type-section-title ${plan.featured ? "text-white" : "theme-text-primary"}`}>{plan.name}</h2>
 
                     <p className={`mt-2 text-sm font-semibold leading-relaxed ${plan.featured ? "text-white/60" : "theme-text-muted"}`}>{plan.audience}</p>
 
                     <p className={`mt-4 text-sm leading-relaxed ${plan.featured ? "text-white/80" : "theme-text-secondary"}`}>{plan.summary}</p>
                 </div>
 
-                <ul className={`mt-6 flex-1 space-y-3 border-t pt-5 ${plan.featured ? "border-white/10" : "theme-border"}`}>
+                <ul className={`mt-5 flex-1 space-y-3 border-t pt-4 sm:mt-6 sm:pt-5 ${plan.featured ? "border-white/10" : "theme-border"}`}>
                     {plan.includes.map((item) => (
                         <li key={item} className="flex items-start gap-3">
                             <CircleCheckBig className={`mt-0.5 h-4 w-4 shrink-0 ${plan.featured ? "text-yellow-400" : "text-yellow-500"}`} strokeWidth={2.2} />
@@ -180,7 +180,7 @@ function PlanCard({ plan }: { plan: Plan }) {
                     ))}
                 </ul>
 
-                <Link to={planHref(plan.slug)} className={`mt-7 inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-bold tracking-wide transition-all duration-300 hover:scale-[1.01] ${plan.featured ? "bg-yellow-400 text-neutral-950 hover:bg-yellow-500" : "theme-cta-primary"}`}>
+                <Link to={planHref(plan.slug)} className={`type-button mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3.5 transition-all duration-300 hover:scale-[1.01] sm:mt-7 ${plan.featured ? "bg-yellow-400 text-neutral-950 hover:bg-yellow-500" : "theme-cta-primary"}`}>
                     Orçar esta solução
                     <ArrowRight className="h-4 w-4" strokeWidth={2.2} />
                 </Link>
@@ -193,13 +193,13 @@ function IntegrationCard({ group }: { group: IntegrationGroup }) {
     const Icon = group.icon;
 
     return (
-        <article className="theme-surface theme-border flex h-full min-h-43 flex-col rounded-3xl border p-6 shadow-xs transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md">
+        <article className="theme-surface theme-border flex h-full min-h-40 flex-col rounded-3xl border p-5 shadow-xs transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md sm:min-h-43 sm:p-6">
             <div className="flex items-center gap-3">
                 <div className="rounded-xl bg-yellow-400/10 p-2 text-yellow-600">
                     <Icon className="h-5 w-5" strokeWidth={2.2} />
                 </div>
 
-                <h4 className="theme-text-primary text-base font-black tracking-tight">{group.title}</h4>
+                <h4 className="theme-text-primary type-card-title">{group.title}</h4>
             </div>
 
             <ul className="mt-5 space-y-3">
@@ -216,8 +216,8 @@ function IntegrationCard({ group }: { group: IntegrationGroup }) {
 
 function InfoSection({ title, items, icon: Icon, iconColorClass }: InfoSectionProps) {
     return (
-        <article className="theme-surface theme-border flex h-full flex-col rounded-3xl border p-6 shadow-xs transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md sm:p-7">
-            <h3 className="theme-text-primary theme-border border-b pb-4 text-base font-black tracking-tight">{title}</h3>
+        <article className="theme-surface theme-border flex h-full flex-col rounded-3xl border p-5 shadow-xs transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md sm:p-7">
+            <h3 className="theme-text-primary theme-border type-card-title border-b pb-4">{title}</h3>
 
             <ul className="mt-5 grid gap-3.5">
                 {items.map((item, index) => (
@@ -241,18 +241,18 @@ export default function Services() {
                 <div className="theme-accent-soft absolute -bottom-36 left-12 h-80 w-80 rounded-full blur-[120px] opacity-30" />
             </div>
 
-            <section className="relative z-10 w-full max-w-7xl mx-auto px-5 pt-12 sm:px-8 sm:pt-16 lg:px-12 lg:pt-16">
+            <section className="page-shell relative z-10 pt-10 sm:pt-16 lg:pt-16">
                 <div className="flex w-full flex-col justify-start">
-                    <h1 className="theme-text-primary max-w-5xl text-[clamp(3.05rem,13vw,5rem)] font-black leading-[1.03] tracking-tight sm:text-[clamp(4rem,9vw,5.6rem)] lg:text-[clamp(4.6rem,5.6vw,5rem)]">
+                    <h1 className="theme-text-primary page-title-display max-w-5xl lg:text-[clamp(4.6rem,5.6vw,5rem)]">
                         Soluções para
                         <br />o seu momento.
                     </h1>
 
-                    <div className="mt-7 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-                        <p className="text-justify theme-text-secondary max-w-2xl text-base font-medium leading-relaxed sm:text-lg">Escolha a estrutura que mais se aproxima da sua necessidade. Cada modelo funciona como uma base de contrato, mas o escopo final é ajustado conforme o projeto, integrações e nível de suporte necessário.</p>
+                    <div className="mt-5 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between sm:mt-7 sm:gap-6">
+                        <p className="theme-text-secondary max-w-2xl text-base font-medium leading-relaxed sm:text-lg">Escolha a estrutura que mais se aproxima da sua necessidade. Cada modelo funciona como uma base de contrato, mas o escopo final é ajustado conforme o projeto, integrações e nível de suporte necessário.</p>
 
                         <div className="flex w-full flex-col gap-4 sm:flex-row sm:items-center lg:w-auto">
-                            <Link to="/contato" className="cursor-pointer theme-cta-primary inline-flex w-full items-center justify-center gap-2 rounded-full px-8 py-4 text-sm font-bold tracking-wide transition-all duration-500 ease-in-out hover:scale-[1.02] hover:shadow-lg sm:w-auto sm:px-10">
+                            <Link to="/contato" className="cursor-pointer theme-cta-primary type-button inline-flex w-full items-center justify-center gap-2 rounded-full px-8 py-4 transition-all duration-500 ease-in-out hover:scale-[1.02] hover:shadow-lg sm:w-auto sm:px-10">
                                 Montar orçamento
                                 <ArrowRight className="h-4 w-4" strokeWidth={2.2} />
                             </Link>
@@ -261,18 +261,25 @@ export default function Services() {
                 </div>
             </section>
 
-            <section className="relative z-10 w-full max-w-7xl mx-auto px-5 py-8 sm:px-8 sm:py-10 lg:px-12 lg:py-12">
-                <div className="-mx-5 flex snap-x snap-mandatory scroll-px-[7vw] gap-5 overflow-x-auto overscroll-x-contain px-[7vw] pb-5 scroll-smooth scrollbar-none sm:-mx-8 sm:scroll-px-8 sm:px-8 lg:mx-0 lg:grid lg:grid-cols-3 lg:gap-6 lg:overflow-visible lg:px-0 lg:pb-0">
+            <section className="page-shell relative z-10 py-8 sm:py-10 lg:py-12">
+                <div className="mb-3 flex items-center justify-between gap-3 lg:hidden">
+                    <p className="theme-text-muted type-chip">Arraste para o lado</p>
+                    <span className="theme-text-muted text-base" aria-hidden="true">→</span>
+                </div>
+
+                <div className="relative">
+                    <div className="-mx-4 mobile-chip-row flex snap-x snap-mandatory scroll-px-4 gap-4 overflow-x-auto overscroll-x-contain px-4 pb-4 scroll-smooth sm:-mx-8 sm:scroll-px-8 sm:gap-5 sm:px-8 lg:mx-0 lg:grid lg:grid-cols-3 lg:gap-6 lg:overflow-visible lg:px-0 lg:pb-0">
                     {plans.map((plan) => (
-                        <div key={plan.slug} className="flex w-[86vw] max-w-97.5 shrink-0 snap-center justify-center sm:w-[46vw] sm:max-w-105 lg:w-auto lg:max-w-none lg:shrink lg:snap-none">
+                        <div key={plan.slug} className="flex w-[88vw] max-w-97.5 shrink-0 snap-center justify-center first:pl-0 sm:w-[46vw] sm:max-w-105 lg:w-auto lg:max-w-none lg:shrink lg:snap-none">
                             <PlanCard plan={plan} />
                         </div>
                     ))}
+                    </div>
                 </div>
             </section>
 
-            <section id="integracoes" className="relative z-10 w-full max-w-7xl mx-auto px-5 py-6 sm:px-8 lg:px-12">
-                <div className="theme-surface theme-border rounded-3xl border p-6 shadow-xs sm:p-8">
+            <section id="integracoes" className="page-shell relative z-10 py-6">
+                <div className="theme-surface theme-border rounded-3xl border p-5 shadow-xs sm:p-8">
                     <div className="mb-7 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                         <div className="flex items-start gap-3">
                             <div className="rounded-xl bg-yellow-400/10 p-2 text-yellow-600">
@@ -280,14 +287,14 @@ export default function Services() {
                             </div>
 
                             <div>
-                                <h2 className="theme-text-primary text-base font-black tracking-tight sm:text-lg">Módulos e integrações</h2>
+                                <h2 className="theme-text-primary type-section-title sm:text-lg">Módulos e integrações</h2>
 
                                 <p className="theme-text-muted mt-1 max-w-2xl text-sm leading-relaxed">Recursos adicionais que podem entrar em qualquer solução base, dependendo do seu fluxo comercial, operacional ou administrativo.</p>
                             </div>
                         </div>
                     </div>
 
-                    <div className="grid gap-5 sm:grid-cols-2 lg:flex lg:flex-wrap lg:justify-center lg:gap-6">
+                    <div className="grid gap-4 sm:grid-cols-2 sm:gap-5 lg:flex lg:flex-wrap lg:justify-center lg:gap-6">
                         {integrationGroups.map((group) => (
                             <div key={group.title} className="w-full lg:w-[calc((100%-3rem)/3)] lg:min-w-0">
                                 <IntegrationCard group={group} />
@@ -300,7 +307,7 @@ export default function Services() {
             {/* ────────────────────────────────────────────────────────────────────────── */}
             {/* MANUTENÇÃO E SUPORTE - SEM SNAP                                           */}
             {/* ────────────────────────────────────────────────────────────────────────── */}
-            <section className="relative z-10 w-full max-w-7xl mx-auto px-5 py-10 pb-20 sm:px-8 sm:py-12 lg:px-12 lg:py-16 lg:pb-24">
+            <section className="page-shell relative z-10 py-10 pb-20 sm:py-12 lg:py-16 lg:pb-24">
                 <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-6">
                     <InfoSection title="Manutenção inclusa" items={maintenanceIncludes} icon={CheckCircle2} iconColorClass="text-emerald-500" />
 

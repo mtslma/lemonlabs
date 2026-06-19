@@ -16,18 +16,19 @@ export const apiConfig = {
             byId: (id: string) => `/briefings/${id}`,
             create: "/briefings",
             list: "/briefings",
+            mine: "/briefings/me",
+            mineById: (id: string) => `/briefings/me/${id}`,
+            promote: (id: string) => `/projects/from-briefing/${id}`,
             updateStatus: (id: string) => `/briefings/${id}/status`,
         },
-        quoteRequests: {
-            byId: (id: string) => `/quote-requests/${id}`,
-            create: "/quote-requests",
-            list: "/quote-requests",
-            updateStatus: (id: string) => `/quote-requests/${id}/status`,
+        projects: {
+            list: "/projects",
+            mine: "/projects/me",
+            mineById: (id: string) => `/projects/me/${id}`,
+            updateStatus: (id: string) => `/projects/${id}/status`,
         },
-        adminNotes: {
-            byId: (id: string) => `/admin-notes/${id}`,
-            create: "/admin-notes",
-            list: "/admin-notes",
+        quoteRequests: {
+            create: "/quote-requests",
         },
     },
 };

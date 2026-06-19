@@ -8,5 +8,5 @@ export type ContactBriefingForm = {
     email: string;
     objective: string;
     references: string;
-    scope: string;
+    scope: string[];
 };

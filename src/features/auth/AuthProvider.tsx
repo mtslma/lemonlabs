@@ -1,14 +1,15 @@
 import { createContext, useEffect, useMemo, useState } from "react";
 import type { ReactNode } from "react";
-import { fetchCurrentUser, login as loginRequest, logout as logoutRequest, refreshSession } from "./auth.service";
+import { fetchCurrentUser, login as loginRequest, logout as logoutRequest, refreshSession, register as registerRequest } from "./auth.service";
 import { readStoredSession, writeStoredSession } from "./auth.storage";
-import type { AuthSession, LoginPayload, UserRole } from "./auth.types";
+import type { AuthSession, LoginPayload, RegisterPayload, UserRole } from "./auth.types";
 
 type AuthContextValue = {
     isAuthenticated: boolean;
     isBootstrapping: boolean;
-    login: (payload: LoginPayload) => Promise<void>;
+    login: (payload: LoginPayload) => Promise<AuthSession>;
     logout: () => Promise<void>;
+    register: (payload: RegisterPayload) => Promise<AuthSession>;
     session: AuthSession | null;
     userRole: UserRole | null;
 };
@@ -72,6 +73,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         const nextSession = await loginRequest(payload);
         setSession(nextSession);
         writeStoredSession(nextSession);
+        return nextSession;
+    }
+
+    async function handleRegister(payload: RegisterPayload) {
+        const nextSession = await registerRequest(payload);
+        setSession(nextSession);
+        writeStoredSession(nextSession);
+        return nextSession;
     }
 
     async function handleLogout() {
@@ -86,7 +95,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         try {
             await logoutRequest({ refreshToken: currentSession.refreshToken });
         } catch {
-            // A saida local segue suficiente quando a API ainda nao esta no ar.
+            // A saída local segue suficiente quando a API ainda não está no ar.
         }
     }
 
@@ -96,6 +105,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
             isBootstrapping,
             login: handleLogin,
             logout: handleLogout,
+            register: handleRegister,
             session,
             userRole: session?.user.role ?? null,
         }),

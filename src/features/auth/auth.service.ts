@@ -1,1 +1,1 @@
-export { fetchCurrentUser, login, logout, refreshSession } from "../../api/resources/auth";
+export { fetchCurrentUser, login, logout, refreshSession, register } from "../../api/resources/auth";

@@ -1,1 +1,1 @@
-export type { AuthSession, AuthUser, LoginPayload, UserRole } from "../../api/types/auth";
+export type { AuthSession, AuthUser, LoginPayload, RegisterPayload, UserRole } from "../../api/types/auth";
